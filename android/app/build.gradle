@@ -76,7 +76,7 @@ android {
 
     namespace "com.foobar"
     defaultConfig {
-        applicationId "com.foobar"
+        applicationId "com.foo.bar"
         minSdkVersion rootProject.ext.minSdkVersion
         targetSdkVersion rootProject.ext.targetSdkVersion
         versionCode 1
