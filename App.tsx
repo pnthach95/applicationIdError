@@ -16,6 +16,7 @@ import {
   useColorScheme,
   View,
 } from 'react-native';
+import {getBundleId} from 'react-native-device-info';
 
 import {
   Colors,
@@ -62,6 +63,10 @@ function App(): React.JSX.Element {
     backgroundColor: isDarkMode ? Colors.darker : Colors.lighter,
   };
 
+  const textColor = {
+    color: isDarkMode ? Colors.lighter : Colors.darker,
+  };
+
   return (
     <SafeAreaView style={backgroundStyle}>
       <StatusBar
@@ -72,6 +77,7 @@ function App(): React.JSX.Element {
         contentInsetAdjustmentBehavior="automatic"
         style={backgroundStyle}>
         <Header />
+        <Text style={[textColor, styles.bundleId]}>{getBundleId()}</Text>
         <View
           style={{
             backgroundColor: isDarkMode ? Colors.black : Colors.white,
@@ -97,6 +103,10 @@ function App(): React.JSX.Element {
 }
 
 const styles = StyleSheet.create({
+  bundleId: {
+    fontSize: 20,
+    textAlign: 'center',
+  },
   sectionContainer: {
     marginTop: 32,
     paddingHorizontal: 24,
